@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="id.ac.ubaya.informatika.a160420062_week2.mainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/mainToEnd"
+            app:destination="@id/endGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="id.ac.ubaya.informatika.a160420062_week2.endGameFragment"
+        android:label="fragment_end_game"
+        tools:layout="@layout/fragment_end_game" >
+        <action
+            android:id="@+id/endToMain"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="player_point"
+            app:argType="integer" />
+    </fragment>
+</navigation>
